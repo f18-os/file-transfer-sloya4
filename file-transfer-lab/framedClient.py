@@ -70,7 +70,7 @@ if os.path.isfile(fileName): #Check if file exists
     framedSend(s, fileName.encode(), debug) #Send file name
     receiveP = framedReceive(s, debug)
     print("received:", receiveP) 
-    if receiveP.decode() != b"File already in server":
+    if receiveP.decode() != "File already in server":
         read = fileR.read(100)
         while read:
             read = read.decode().strip().encode()
